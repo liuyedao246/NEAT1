@@ -37,6 +37,8 @@ if(!file.exists(Rdata_file)){
   phenoData[1:5,1:5]
   dim(phenoData)
   rownames(phenoData) <- phenoData[, 1]
+  phenoData <- phenoData[colnames(raw_data),]
+  ## 需要加上这一步，删除没有表达量的sample
   dim(phenoData)
   phenoData[1,]
   colnames(phenoData)
@@ -71,6 +73,8 @@ table(phenoData[Moderate_ID, "SMTS"])
 
 Mild_ID <-  rownames(phenoData)[phenoData[, "SMATSSCR"] == 1]
 table(phenoData[Mild_ID, "SMTS"])
+
+
 
 raw_data <- as.data.frame(t(log10(raw_data + 1)))
 raw_data$SMTSD <- phenoData$SMTSD
