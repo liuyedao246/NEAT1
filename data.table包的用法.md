@@ -127,3 +127,6 @@ DT[,.(seq = min(y):max(v)), by=x]  #输出seq列，内容是min(a)到max(b)
 DT[, c(.(y=max(y)), lapply(.SD, min)), by=x, .SDcols=y:v]  #对DT取y:v之间的列，按x分组，输出max(y),对y到v之间的列每列求最小值输出。
 ````
 
+[Working with big data in genome]<https://rdrr.io/github/PriceLab/TrenaProjectLymphocyte/src/prep/import/expression/extractWholeBloodExpression.R>
+
+<http://myweb.uiowa.edu/pbreheny/misc/big-data-lab.html>
